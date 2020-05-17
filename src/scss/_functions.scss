@@ -1,0 +1,9 @@
+// _functions.scss
+@function get($var,$key) {
+    @if map-has-key($var, $key) {
+        @return map-get($var, $key);
+    }
+
+    @warn "Unknown `#{$key}` in $z-layers.";
+    @return null;
+}

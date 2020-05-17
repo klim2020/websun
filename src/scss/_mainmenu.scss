@@ -1,0 +1,180 @@
+#mainmenu{
+    background-color: $mainBckgroundInverse;
+    height: 50px;
+
+    h1{
+        font-family: "MerriweatherSansBold", serif;
+
+        font-size: 36px;
+
+    }
+    .logo{
+        overflow: hidden;
+        white-space: nowrap;
+
+        @media (max-width: 1350px) and (min-width:get-min(xl))  {
+            h1{font-size: 30px;}
+
+        }
+        @media (max-width:get-max(lg) ) {
+            text-align: left;
+        }
+    }
+    ul,li{
+        list-style: none;
+    }
+    //ul
+    .topmenu{
+        font-family: "MerriweatherSansRegular", System;
+        font-size: 14pt;
+        color: $typografyInverseColor;
+        float: right;
+        white-space: nowrap;
+        ul:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        a {
+            text-decoration: none;
+            display: block;
+            transition: .3s linear;
+        }
+        box-sizing: border-box;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            a {
+                text-decoration: none;
+                display: block;
+                transition: .3s linear;
+            }
+        }
+        &>li {
+            display: inline-block;
+            position: relative;
+            margin-left: 15px;
+
+            //border-left: 1px solid #ECF1F2;
+            &>.submenu:before{
+                content: "";
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-bottom: 5px solid $mainBckground;
+                position: absolute;
+                z-index: 100;
+                top:-5px;
+                left:10px;
+
+            }
+        }
+        & > li:last-child {border-right: 1px solid #ECF1F2;}
+        & > li > a {
+            //font-weight: bold;
+            padding-top:5px;
+            font-size: 12px;
+
+            //text-transform: uppercase;
+            //letter-spacing: 2px;
+            color: $typografyInverseColor;
+        }
+
+        .active:after, .submenu-link:after {
+            content: "▶";
+            //font-family: "FontAwesome";
+            color: inherit;
+            //margin-left: 10px;
+            float: right;
+
+        }
+        .active:after{content: "";}
+        & > li > a:hover{color: black;cursor: pointer;}
+        .submenu li a:hover {background-color: gray;}
+        .active{color: black;}
+        .submenu {
+            position: absolute;
+            left: -1px;
+            z-index: 5;
+            width: 140px;
+            //border-bottom: 1px solid #ECF1F2;
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: .3s ease-in-out;
+            li{position: relative;}
+            a {
+                background: $mainBckground;
+                border-bottom: 1px solid #d5caba;
+                //border-right: 1px solid #ECF1F2;
+                //border-left: 1px solid #ECF1F2;
+
+                color: #1c1c1c;
+                text-align: left;
+                font-size: 14px;
+                letter-spacing: 1px;
+                padding: 10px 0px 10px 10px;
+            }
+            .submenu {
+
+                position: absolute;
+                top: 0;
+                left: calc(100% - 1px);
+                left: -webkit-calc(100% - 1px);
+                margin-left: 10px;
+                &:before{
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    border-top: 5px solid transparent;
+                    border-bottom: 5px solid transparent;
+
+                    border-right:5px solid $mainBckground;
+                    position: absolute;
+                    z-index: 100;
+                    top:15px;
+                    left:-5px;
+
+
+                }
+
+
+            }
+
+        }
+        li:hover > .submenu {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+
+    }
+
+}
+
+.mobile-menu {
+    display: none;
+//slicknavigation correction
+
+}
+
+.scrolled{
+    position:fixed;
+    left:0;
+    width: 100%;
+    z-index: 100;
+
+    animation: drop 1s ease-out;
+    @keyframes drop {
+        from { top: -50px; }
+        to { top: 0px; }
+    }
+}
+
+
+
+
+

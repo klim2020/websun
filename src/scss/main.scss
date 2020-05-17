@@ -1,0 +1,18 @@
+@import "functions";
+@import "fonts";
+@import "vars";
+@import "mainmenu";
+*{
+    margin: 0px;
+    padding:0px;
+    }
+
+body{
+    background-color: $mainBckgroundTransparent;
+
+}
+
+.nopaddings {
+    padding: 0 !important;
+    margin: 0 !important;
+}

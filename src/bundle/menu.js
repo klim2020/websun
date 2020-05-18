@@ -19,11 +19,11 @@ $(window).on('load',function () {
 
     $('.mobile-menu').slicknav({
         prependTo: '.menuplaceholder',
-        parentTag: 'liner',
+        parentTag: 'div',
         allowParentLinks: true,
-        //duplicate: true,
-        //label: '',
-        //closedSymbol: '<i class="fa fa-chevron-right"></i>',
-        //openedSymbol: '<i class="fa fa-chevron-down"></i>',
+        duplicate: false,
+        label: '',
+        closedSymbol: '<i class="fa fa-chevron-right"></i>',
+        openedSymbol: '<i class="fa fa-chevron-down"></i>',
     });
 });

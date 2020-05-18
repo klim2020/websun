@@ -8,17 +8,51 @@
         font-size: 36px;
 
     }
+    .slicknav_icon{
+        background-color: black;
+        span{
+            background-color: black;
+        }
+    }
+    .menuplaceholder{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        .sticky-nav {
+            position: relative;
+            height: 40px;
+            width: 500px;
+            margin: 0 auto;
+        }
+        a:hover{
+            background-color: gray;
+            list-style: none;
+        }
+    }
+
+
+
     .logo{
         overflow: hidden;
         white-space: nowrap;
 
         @media (max-width: 1350px) and (min-width:get-min(xl))  {
-            h1{font-size: 30px;}
+            //h1{font-size: 30px;}
 
         }
         @media (max-width:get-max(lg) ) {
             text-align: left;
         }
+        @media (max-width:get-max(xs)) {
+            width: 330px;
+        }
+
+    }
+    .slicknav_menu{
+        margin-top: -10px;
     }
     ul,li{
         list-style: none;
